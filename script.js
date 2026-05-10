@@ -28,7 +28,7 @@ document.addEventListener('keydown', e => {
 });
 
 /* ── Form submit ──────────────────────────────────── */
-contactForm.addEventListener('submit', e => {
+contactForm.addEventListener('submit', async e => {
   e.preventDefault();
 
   const nombre  = document.getElementById('nombre').value.trim();
@@ -44,8 +44,32 @@ contactForm.addEventListener('submit', e => {
     return;
   }
 
-  contactForm.style.display = 'none';
-  formSuccess.classList.add('visible');
+  const submitBtn = contactForm.querySelector('[type="submit"]');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Enviando…';
+
+  const formData = new FormData(contactForm);
+  const data = Object.fromEntries(formData);
+
+  try {
+    const res  = await fetch('https://api.web3forms.com/submit', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body:    JSON.stringify(data),
+    });
+    const json = await res.json();
+
+    if (json.success) {
+      contactForm.style.display = 'none';
+      formSuccess.classList.add('visible');
+    } else {
+      throw new Error(json.message || 'Error al enviar');
+    }
+  } catch {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Enviar consulta';
+    alert('Hubo un error al enviar. Por favor intentá de nuevo.');
+  }
 });
 
 function highlightEmpty(fields) {
