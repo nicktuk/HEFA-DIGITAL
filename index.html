@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HEFA DIGITAL — Automatización e IA para PYMEs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       HEADER
+  ═══════════════════════════════════════════════ -->
+  <header class="header" id="inicio">
+    <div class="container header__inner">
+      <a href="#inicio" class="header__logo">
+        <!-- Reemplazar con <img src="logo.svg" alt="HEFA DIGITAL" /> cuando esté disponible -->
+        <span class="logo-placeholder">HEFA<strong>DIGITAL</strong></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="#inicio" class="nav__link">Inicio</a></li>
+          <li><a href="#servicios" class="nav__link">Servicios</a></li>
+          <li><a href="#nosotros" class="nav__link">Quiénes somos</a></li>
+          <li><a href="#contacto-section" class="nav__link">Contacto</a></li>
+        </ul>
+        <button class="btn btn--primary" onclick="openModal()">Solicitar diagnóstico</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <p class="hero__eyebrow">Automatización · IA · Consultoría de procesos</p>
+        <h1 class="hero__title">
+          Automatización e IA para PYMEs que quieren dejar el caos operativo atrás
+        </h1>
+        <p class="hero__desc">
+          Ayudamos a empresas con procesos manuales, tareas repetitivas y falta de información clara a trabajar de forma más ordenada, rápida y eficiente.
+        </p>
+        <div class="hero__actions">
+          <button class="btn btn--primary btn--lg" onclick="openModal()">Solicitar diagnóstico</button>
+          <a href="#servicios" class="btn btn--ghost btn--lg">Ver servicios</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       QUÉ RESOLVEMOS
+  ═══════════════════════════════════════════════ -->
+  <section class="section section--light" id="que-resolvemos">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Hacemos que tu empresa funcione mejor</h2>
+        <p class="section__subtitle">
+          Reducimos carga manual, errores, pérdida de tiempo y dependencia de personas clave. Ordenamos procesos internos y aplicamos tecnología de forma simple, útil y concreta.
+        </p>
+      </div>
+      <div class="grid grid--3">
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="feature-card__title">Menos tareas manuales</h3>
+          <p class="feature-card__desc">Automatizamos lo repetitivo para que tu equipo se enfoque en lo que importa.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+          </div>
+          <h3 class="feature-card__title">Menos errores operativos</h3>
+          <p class="feature-card__desc">Procesos claros y automatizados reducen los errores humanos en la operación diaria.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          </div>
+          <h3 class="feature-card__title">Más control del negocio</h3>
+          <p class="feature-card__desc">Dashboards e indicadores para ver el estado real de tu empresa en cualquier momento.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="feature-card__title">Procesos más rápidos</h3>
+          <p class="feature-card__desc">Eliminamos cuellos de botella y hacemos que el trabajo fluya sin fricciones.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h3 class="feature-card__title">Información clara para decidir</h3>
+          <p class="feature-card__desc">Datos concretos y visibles para que los líderes tomen mejores decisiones más rápido.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+          <h3 class="feature-card__title">IA aplicada a problemas reales</h3>
+          <p class="feature-card__desc">Soluciones concretas con inteligencia artificial, sin tecnicismos ni promesas vacías.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SERVICIOS
+  ═══════════════════════════════════════════════ -->
+  <section class="section" id="servicios">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Nuestros servicios</h2>
+        <p class="section__subtitle">Soluciones concretas para empresas que quieren operar mejor.</p>
+      </div>
+      <div class="grid grid--4">
+        <div class="service-card">
+          <div class="service-card__num">01</div>
+          <h3 class="service-card__title">Automatización de procesos</h3>
+          <p class="service-card__desc">Automatizamos tareas repetitivas, carga de datos, reportes, envíos automáticos e integración entre sistemas para reducir errores y ahorrar tiempo operativo.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__num">02</div>
+          <h3 class="service-card__title">Dashboards e indicadores</h3>
+          <p class="service-card__desc">Creamos tableros claros para visualizar ventas, operaciones, stock, cobranzas y métricas clave en una sola pantalla.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__num">03</div>
+          <h3 class="service-card__title">IA aplicada a empresas</h3>
+          <p class="service-card__desc">Implementamos asistentes, automatizaciones inteligentes y soluciones con IA para responder consultas, ordenar información y mejorar la productividad.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__num">04</div>
+          <h3 class="service-card__title">Diagnóstico y mejora de procesos</h3>
+          <p class="service-card__desc">Analizamos cómo trabaja tu empresa, detectamos cuellos de botella y proponemos un plan concreto para ordenar y mejorar la operación.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       QUIÉNES SOMOS
+  ═══════════════════════════════════════════════ -->
+  <section class="section section--light" id="nosotros">
+    <div class="container">
+      <div class="about">
+        <div class="about__text">
+          <p class="section__eyebrow">Quiénes somos</p>
+          <h2 class="section__title">Tecnología simple para empresas reales</h2>
+          <p class="about__body">
+            En HEFA DIGITAL ayudamos a PYMEs a modernizarse sin complicarse con tecnología. Trabajamos sobre problemas concretos: procesos manuales, desorden operativo, tareas repetitivas y falta de información para tomar decisiones.
+          </p>
+          <p class="about__body">
+            Nuestro enfoque es simple: entender cómo trabaja la empresa, detectar oportunidades de mejora y aplicar soluciones tecnológicas que generen impacto real.
+          </p>
+          <button class="btn btn--primary" onclick="openModal()">Hablemos</button>
+        </div>
+        <div class="about__visual">
+          <div class="about__stat-grid">
+            <div class="stat-card">
+              <span class="stat-card__value">+40%</span>
+              <span class="stat-card__label">Reducción promedio de tiempo en tareas manuales</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__value">100%</span>
+              <span class="stat-card__label">Soluciones a medida de cada empresa</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__value">PYMEs</span>
+              <span class="stat-card__label">Nuestro foco: empresas reales con problemas reales</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__value">Simple</span>
+              <span class="stat-card__label">Tecnología que se entiende y se usa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       CTA
+  ═══════════════════════════════════════════════ -->
+  <section class="section cta-section" id="contacto-section">
+    <div class="container">
+      <div class="cta">
+        <h2 class="cta__title">¿Querés saber qué procesos podés mejorar primero?</h2>
+        <p class="cta__desc">Solicitá un diagnóstico inicial y veamos dónde tu empresa puede ahorrar tiempo, reducir errores y operar mejor.</p>
+        <button class="btn btn--primary btn--lg" onclick="openModal()">Solicitar diagnóstico</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="logo-placeholder logo-placeholder--sm">HEFA<strong>DIGITAL</strong></span>
+      <p class="footer__copy">© 2025 HEFA DIGITAL. Todos los derechos reservados.</p>
+      <p class="footer__tagline">Automatización · IA · Consultoría de procesos</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════
+       MODAL DE CONTACTO
+  ═══════════════════════════════════════════════ -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOverlay(event)">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" onclick="closeModal()" aria-label="Cerrar">&times;</button>
+      <h2 class="modal__title" id="modalTitle">Solicitar diagnóstico</h2>
+      <p class="modal__subtitle">Completá el formulario y nos ponemos en contacto a la brevedad.</p>
+
+      <form class="form" id="contactForm" novalidate>
+        <div class="form__row form__row--2">
+          <div class="form__group">
+            <label class="form__label" for="nombre">Nombre *</label>
+            <input class="form__input" type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="empresa">Empresa *</label>
+            <input class="form__input" type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required />
+          </div>
+        </div>
+        <div class="form__row form__row--2">
+          <div class="form__group">
+            <label class="form__label" for="email">Email *</label>
+            <input class="form__input" type="email" id="email" name="email" placeholder="tu@email.com" required />
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="telefono">Teléfono / WhatsApp</label>
+            <input class="form__input" type="tel" id="telefono" name="telefono" placeholder="+54 11 0000-0000" />
+          </div>
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="mensaje">Mensaje</label>
+          <textarea class="form__input form__textarea" id="mensaje" name="mensaje" placeholder="Contanos brevemente qué problema querés resolver…"></textarea>
+        </div>
+        <button class="btn btn--primary btn--full" type="submit">Enviar consulta</button>
+      </form>
+
+      <div class="form__success" id="formSuccess">
+        <svg class="form__success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <h3>Gracias por contactarte.</h3>
+        <p>Te responderemos a la brevedad.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
