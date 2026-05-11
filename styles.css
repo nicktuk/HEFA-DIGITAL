@@ -93,16 +93,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .btn--lg  { padding: 13px 28px; font-size: .95rem; }
 .btn--full { width: 100%; }
 
-/* ── Logo placeholder ─────────────────────────────── */
-.logo-placeholder {
-  font-size: 1.15rem;
-  font-weight: 300;
-  letter-spacing: .08em;
-  color: var(--color-primary);
-  text-transform: uppercase;
+/* ── Logo ─────────────────────────────────────────── */
+.header__logo-img {
+  height: 44px;
+  width: auto;
+  border-radius: 6px;
 }
-.logo-placeholder strong { font-weight: 700; }
-.logo-placeholder--sm { font-size: .9rem; }
+
+.footer__logo-img {
+  height: 36px;
+  width: auto;
+  border-radius: 6px;
+}
 
 /* ══════════════════════════════════════════════════
    HEADER
@@ -582,7 +584,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    RESPONSIVE
    ══════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
-  .grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .grid--3 { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 860px) {
