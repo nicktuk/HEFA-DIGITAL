@@ -48,14 +48,25 @@ contactForm.addEventListener('submit', async e => {
   submitBtn.disabled = true;
   submitBtn.textContent = 'Enviando…';
 
-  const formData = new FormData(contactForm);
-
   try {
-    const res  = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      body:   formData,
+    const payload = {
+      access_key: '84b37b3f-4788-4454-b42e-e249a0388f5c',
+      subject:    'Nueva consulta desde HEFA DIGITAL',
+      botcheck:   false,
+      name:       nombre,
+      empresa:    empresa,
+      email:      email,
+      telefono:   document.getElementById('telefono').value.trim(),
+      message:    document.getElementById('mensaje').value.trim(),
+    };
+
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body:    JSON.stringify(payload),
     });
     const json = await res.json();
+    console.log('Web3Forms response:', json);
 
     if (json.success) {
       contactForm.style.display = 'none';
@@ -63,7 +74,8 @@ contactForm.addEventListener('submit', async e => {
     } else {
       throw new Error(json.message || 'Error al enviar');
     }
-  } catch {
+  } catch (err) {
+    console.error('Submit error:', err);
     submitBtn.disabled = false;
     submitBtn.textContent = 'Enviar consulta';
     alert('Hubo un error al enviar. Por favor intentá de nuevo.');
