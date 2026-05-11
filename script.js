@@ -49,13 +49,11 @@ contactForm.addEventListener('submit', async e => {
   submitBtn.textContent = 'Enviando…';
 
   const formData = new FormData(contactForm);
-  const data = { ...Object.fromEntries(formData), botcheck: '' };
 
   try {
     const res  = await fetch('https://api.web3forms.com/submit', {
-      method:  'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body:    JSON.stringify(data),
+      method: 'POST',
+      body:   formData,
     });
     const json = await res.json();
 
