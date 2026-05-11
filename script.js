@@ -49,7 +49,7 @@ contactForm.addEventListener('submit', async e => {
   submitBtn.textContent = 'Enviando…';
 
   const formData = new FormData(contactForm);
-  const data = Object.fromEntries(formData);
+  const data = { ...Object.fromEntries(formData), botcheck: '' };
 
   try {
     const res  = await fetch('https://api.web3forms.com/submit', {
